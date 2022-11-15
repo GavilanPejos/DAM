@@ -11,4 +11,6 @@
     <string name="loginActivity_icono">icono de la aplicación</string>
     <string name="forgetfrag_enviar">Enviar</string>
     <string name="forgetfrag_email">E-mail</string>
+    <string name="login_uservalue">Usuario</string>
+    <string name="register_value">E-mail</string>
 </resources>

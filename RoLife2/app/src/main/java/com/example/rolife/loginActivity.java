@@ -2,6 +2,7 @@ package com.example.rolife;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
@@ -19,21 +20,30 @@ public class loginActivity extends AppCompatActivity {
 
     FragmentTransaction transaction;
     Fragment loginform, registerform,forgetform;
+    FragmentManager fragmentManager;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
-        loginform = new login_bar_fragment();
-
-
+        //Agregamos el login
+        addlogin();
 
 
-        getSupportFragmentManager().beginTransaction().add(R.id.loginActivity_FLcontainerfragments, loginform).commit();
+
+
 
     }
+
+    private void addlogin() {
+        loginform = new login_bar_fragment();
+        fragmentManager=getSupportFragmentManager();
+        transaction=fragmentManager.beginTransaction();
+        transaction.add(R.id.loginActivity_FLcontainerfragments,loginform);
+        transaction.commit();
+    }
+
 
 
     public void logearse() {
@@ -44,19 +54,8 @@ public class loginActivity extends AppCompatActivity {
 
     }
 
-    public void onClick(View view) {
-        transaction = getSupportFragmentManager().beginTransaction();
-        if (view.getId() == R.id.loginfrag_BTNforgetpass) {
-            transaction.replace(R.id.loginActivity_FLcontainerfragments, forgetform).commit();
-        } else if (view.getId() == R.id.loginfrag_BTNregister) {
-            transaction.replace(R.id.loginActivity_FLcontainerfragments, registerform).commit();
-        } else if(view.getId()==R.id.forgetfrag_BTNbacktologin){
-            transaction.replace(R.id.loginActivity_FLcontainerfragments, loginform).commit();
-        }
-        else {
-
-        }
 
 
-    }
+
+
 }

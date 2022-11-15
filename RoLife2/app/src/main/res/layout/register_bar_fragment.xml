@@ -6,10 +6,10 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/loginbar_editText_user"
+        android:id="@+id/registerfrag_ETuser"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Usuario"
+        android:hint="@string/login_uservalue"
         android:minHeight="48dp"
         android:paddingLeft="20dp"
         android:paddingTop="10dp"
@@ -21,62 +21,99 @@
         app:layout_constraintHorizontal_bias=".5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias=".3"
+        app:layout_constraintVertical_bias="0.1"
         app:layout_constraintWidth_percent=".8" />
-
     <EditText
-        android:id="@+id/loginbar_editText_pass"
+        android:id="@+id/registerfrag_ETemail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:hint="Contraseña"
-        android:ems="10"
-        android:inputType="textPassword"
+        android:hint="@string/register_value"
         android:minHeight="48dp"
-        android:paddingLeft="20dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
         android:paddingTop="10dp"
 
 
         android:paddingBottom="10dp"
-        android:textColorHint="#757575"
         app:layout_constraintBottom_toBottomOf="parent"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias=".5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/loginbar_editText_user"
-        app:layout_constraintVertical_bias="0"
+        app:layout_constraintTop_toTopOf="@id/registerfrag_ETuser"
+        app:layout_constraintVertical_bias=".15"
         app:layout_constraintWidth_percent=".8" />
-    <Button
-        android:id="@+id/loginbar_button_login"
+    <EditText
+        android:id="@+id/registerfrag_ETPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Login"
+        android:hint="@string/loginfrag_password"
+        android:minHeight="48dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="10dp"
+
+        android:paddingBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias=".5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/registerfrag_ETemail"
+        app:layout_constraintVertical_bias=".15"
+        app:layout_constraintWidth_percent=".8" />
+    <EditText
+        android:id="@+id/registerfrag_ETConfirmPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/loginfrag_password"
+        android:minHeight="48dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="10dp"
+
+        android:paddingBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias=".5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/registerfrag_ETPassword"
+        app:layout_constraintVertical_bias=".15"
+        app:layout_constraintWidth_percent=".8" />
+
+
+    <Button
+        android:id="@+id/registerfrag_BTNRegister"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/loginfrag_register"
         android:textSize="18sp"
         android:textStyle="bold"
 
-        app:layout_constraintVertical_bias="0.7"
-        app:layout_constraintHorizontal_bias=".5"
-        app:layout_constraintWidth_percent=".8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias=".1"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/registerfrag_ETConfirmPassword"
+        app:layout_constraintVertical_bias="0.3"
+        app:layout_constraintWidth_percent=".45" />
+
+    <Button
+        android:id="@+id/registerfrag_BTNBack"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="atras"
+        android:textSize="18sp"
+        android:textStyle="bold"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Olvidar contraseña"
-        app:layout_constraintVertical_bias="0"
-        app:layout_constraintHorizontal_bias="1"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="5dp"
+        app:layout_constraintHorizontal_bias=".1"
 
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/loginbar_editText_pass"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/loginbar_editText_pass"
-        />
+        app:layout_constraintStart_toEndOf="@+id/registerfrag_BTNRegister"
+        app:layout_constraintTop_toTopOf="@id/registerfrag_ETConfirmPassword"
+        app:layout_constraintVertical_bias="0.3"
+        app:layout_constraintWidth_percent=".45" />
+
 
 
 
