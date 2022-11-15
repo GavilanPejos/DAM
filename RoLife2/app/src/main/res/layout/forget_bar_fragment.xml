@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <EditText
+        android:id="@+id/forgetfrag_ETemail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:autofillHints="E-mail"
+        android:background="@drawable/loginfrag_styletvbg"
+        android:ems="10"
+        android:hint="@string/forgetfrag_email"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        android:paddingStart="20dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="10dp"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias=".5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias=".5"
+        app:layout_constraintWidth_percent=".8"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/forgetfrag_BTNsend"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/loginfrag_stylebtnbg"
+        android:onClick="onClick"
+        android:text="@string/forgetfrag_enviar"
+        android:textSize="30sp"
+        android:textStyle="bold"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias=".5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/forgetfrag_ETemail"
+        app:layout_constraintVertical_bias="0.2"
+        app:layout_constraintWidth_percent=".8" />
+
+    <ImageButton
+        android:id="@+id/forgetfrag_BTNbacktologin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:contentDescription="@string/loginActivity_botondegoogle"
+        android:elevation="35dp"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:onClick="onClick"
+        android:src="@drawable/btn_atras"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/forgetfrag_BTNsend" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

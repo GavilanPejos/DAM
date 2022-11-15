@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".IntroductorActivity">
+
+    <ImageView
+        android:id="@+id/fondo_dungeon"
+        android:layout_width="wrap_content"
+        android:layout_height="900dp"
+        android:scaleType="centerCrop"
+        android:elevation="2dp"
+
+        android:src="@drawable/bg_introd"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0" />
+
+    <ImageView
+        android:id="@+id/logo_rojo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:src="@drawable/logo_rolife"
+        android:elevation="2dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3" />
+    <ImageView
+        android:id="@+id/nombre_app"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleX="1"
+        android:scaleY="1"
+        android:src="@drawable/nombre"
+        android:elevation="2dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.28" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie_levelup"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:scaleX="4"
+        android:scaleY="5"
+        android:elevation="2dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo_rojo"
+        app:lottie_autoPlay="true"
+        app:lottie_rawRes="@raw/lvlup" />
+
+    <!--Esto es el OnBoarding para el texto despl -->
+    <FrameLayout
+        android:id="@+id/Fragment_Container_Onboarding"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="1dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

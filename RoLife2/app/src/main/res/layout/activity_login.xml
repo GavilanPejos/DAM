@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_night"
+    tools:context=".loginActivity">
+    <!--Esto tengo que cambiarlo que el fondo queda como el culo -->
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/loginActivity_CLmarco"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        app:layout_constraintVertical_bias="1">
+
+        <FrameLayout
+            android:id="@+id/loginActivity_FLcontainerfragments"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5"
+            tools:ignore="SpeakableTextPresentCheck" >
+
+        </FrameLayout>
+
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/loginActivity_FBgooglebtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/google"
+            android:elevation="35dp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/loginActivity_FLcontainerfragments"
+            android:contentDescription="@string/loginActivity_botondegoogle" />
+
+        <ImageView
+            android:id="@+id/loginActivity_IMlogo"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:src="@drawable/logo_negro"
+
+            app:layout_constraintBottom_toTopOf="@+id/loginActivity_FLcontainerfragments"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.15"
+            android:contentDescription="@string/loginActivity_icono" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
