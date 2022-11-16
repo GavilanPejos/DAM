@@ -6,11 +6,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
-import android.text.method.MovementMethod;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.rolife.fragments.callBackFragment;
 import com.example.rolife.fragments.forget_bar_fragment;
@@ -43,9 +38,16 @@ public class loginActivity extends AppCompatActivity implements callBackFragment
         fragmentTransaction.commit();//Acción de realizar.
     }
 
-    public void replaceFragment() {
-
+    public void replaceFragment(String procedencia) {
+switch(procedencia){
+    case"register":
         fragment = new register_bar_fragment();
+        break;
+    case"forget":
+        fragment = new forget_bar_fragment();
+        break;
+}
+        //fragment = new register_bar_fragment();
         fragmentManager = getSupportFragmentManager();//lo convertimos en un support de verdad
         fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.addToBackStack(null);
@@ -54,7 +56,8 @@ public class loginActivity extends AppCompatActivity implements callBackFragment
     }
 
     @Override
-    public void changeFragment() {
-        replaceFragment();
+    public void changeFragment(String procedencia) {
+
+        replaceFragment(procedencia);
     }
 }

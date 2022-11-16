@@ -5,9 +5,12 @@
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="350dp"
-        android:layout_height="500dp"
-        android:background="@drawable/bg"
+       android:id="@+id/registerfrag_LAgrey"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleX=".9"
+        android:scaleY=".8"
+        android:background="@drawable/rectanglegray_border"
         app:layout_constraintVertical_bias=".28"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,7 +39,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias=".5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@id/registerfrag_LAgrey"
         app:layout_constraintVertical_bias="0.15"
         app:layout_constraintWidth_percent=".8"
         android:autofillHints="usuario"
@@ -52,9 +55,8 @@
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
         android:paddingTop="10dp"
-
-
         android:paddingBottom="10dp"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias=".5"
@@ -114,8 +116,9 @@
         android:id="@+id/registerfrag_BTNRegister"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@drawable/loginfrag_stylebtnbg"
         android:text="@string/loginfrag_register"
-        android:textSize="18sp"
+        android:textSize="30sp"
         android:textStyle="bold"
 
         app:layout_constraintBottom_toBottomOf="parent"
@@ -123,8 +126,8 @@
         app:layout_constraintHorizontal_bias=".5"
 
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/registerfrag_ETConfirmPassword"
-        app:layout_constraintVertical_bias="0.3"
+        app:layout_constraintTop_toBottomOf="@+id/registerfrag_ETConfirmPassword"
+        app:layout_constraintVertical_bias="0.1"
 
         app:layout_constraintWidth_percent=".8" />
 

@@ -6,6 +6,35 @@
     android:layout_height="match_parent">
 
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/forgetfrag_LAgrey"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleX=".9"
+        android:scaleY=".8"
+        android:background="@drawable/rectanglegray_border"
+        app:layout_constraintVertical_bias=".28"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        >
+
+        <TextView
+            android:id="@+id/forgetfrag_TVtext"
+            android:layout_width="305dp"
+            android:layout_height="128dp"
+            android:text="@string/forget_TVExample"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@id/forgetfrag_LAgrey"
+            app:layout_constraintEnd_toEndOf="@id/forgetfrag_LAgrey"
+            app:layout_constraintStart_toStartOf="@id/forgetfrag_LAgrey"
+            app:layout_constraintTop_toTopOf="@id/forgetfrag_LAgrey"
+            app:layout_constraintVertical_bias=".2" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <EditText
         android:id="@+id/forgetfrag_ETemail"
         android:layout_width="0dp"
@@ -49,22 +78,6 @@
         app:layout_constraintTop_toBottomOf="@+id/forgetfrag_ETemail"
         app:layout_constraintVertical_bias="0.2"
         app:layout_constraintWidth_percent=".8" />
-
-    <ImageButton
-        android:id="@+id/forgetfrag_BTNbacktologin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:contentDescription="@string/loginActivity_botondegoogle"
-        android:elevation="35dp"
-        android:minWidth="48dp"
-        android:minHeight="48dp"
-        android:onClick="onClick"
-        android:src="@drawable/btn_atras"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/forgetfrag_BTNsend" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

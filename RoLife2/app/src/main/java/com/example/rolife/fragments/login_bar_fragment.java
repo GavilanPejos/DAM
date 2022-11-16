@@ -53,7 +53,7 @@ public class login_bar_fragment extends Fragment {
         //BOTONES IDENTIFICADOS
         btnLogin = vroot.findViewById(R.id.loginfrag_BTNlogin);
         btnRegister = vroot.findViewById(R.id.loginfrag_BTNregister);
-
+        btnForget =vroot.findViewById(R.id.loginfrag_BTNforgetpass);
         //ACCIONES BOTONILES
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,7 +79,19 @@ public class login_bar_fragment extends Fragment {
             public void onClick(View v) {
                 //Registro
                 if (callBackFragment != null) {
-                    callBackFragment.changeFragment();
+                    String procedencia= "register";
+                    callBackFragment.changeFragment(procedencia);
+                }
+            }
+        });
+
+        btnForget.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Registro
+                if (callBackFragment != null) {
+                    String procedencia= "forget";
+                    callBackFragment.changeFragment(procedencia);
                 }
             }
         });
