@@ -1,11 +1,14 @@
 package com.example.rolife.fragments;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
@@ -14,9 +17,15 @@ import com.example.rolife.R;
 public class register_bar_fragment extends Fragment {
 EditText etUserName,etPassword,etEmail,etConfirmPass;
 Button btnConfirm,btnBack;
+String registerName,registerPassword,registerEmail,registerConfirmPass;
+SharedPreferences sharedPreferences;
+SharedPreferences.Editor editor;
 
-    public register_bar_fragment() {
-        // Required empty public constructor
+    @Override
+    public void onAttach(Context context){
+        sharedPreferences=context.getSharedPreferences("usersValues",Context.MODE_PRIVATE);
+        editor=sharedPreferences.edit();
+        super.onAttach(context);
     }
 
 
@@ -24,33 +33,40 @@ Button btnConfirm,btnBack;
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v=inflater.inflate(R.layout.register_bar_fragment,container,false);
+        View vroot=inflater.inflate(R.layout.register_bar_fragment,container,false);
 
-        etUserName= v.findViewById(R.id.registerfrag_ETuser);
-        etPassword=v.findViewById(R.id.registerfrag_ETPassword);
-        etEmail=v.findViewById(R.id.registerfrag_ETemail);
-        etConfirmPass=v.findViewById(R.id.registerfrag_ETConfirmPassword);
+        //EDITTEXT IDENTIFICADOS
+        etUserName=vroot.findViewById(R.id.registerfrag_ETuser);
+        etPassword=vroot.findViewById(R.id.registerfrag_ETPassword);
+        etEmail=vroot.findViewById(R.id.registerfrag_ETemail);
+        etConfirmPass=vroot.findViewById(R.id.registerfrag_ETConfirmPassword);
+        //BOTONES IDENTIFICADOS
+        btnConfirm=vroot.findViewById(R.id.registerfrag_BTNRegister);
 
-        btnConfirm=v.findViewById(R.id.registerfrag_BTNRegister);
-        btnBack=v.findViewById(R.id.registerfrag_BTNBack);
 
+        //ACCIONES BOTONILES
 
-        btnConfirm.setOnClickListener(new View.OnClickListener() {
+        btnConfirm.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View v) {
+            public void onClick(View v){
+                //Confirmar registro
+            registerName=etUserName.getText().toString();
+            registerPassword=etPassword.getText().toString();
+            registerEmail=etEmail.getText().toString();
+            registerConfirmPass=etConfirmPass.getText().toString();
 
+            editor.putString("userName",registerName);
+            editor.putString("userPass",registerPassword);
+            editor.putString("email",registerEmail);
+
+            editor.apply();
+                Toast.makeText(getContext(),"Registered",Toast.LENGTH_SHORT).show();
             }
         });
 
-        btnBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
 
 
-        return v;
+        return vroot;
     }
 }
 
