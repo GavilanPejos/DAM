@@ -14,4 +14,8 @@
     <string name="login_uservalue">Usuario</string>
     <string name="register_value">E-mail</string>
     <string name="forget_TVExample">Si eres un calvo, no eres bienvenido</string>
+    <string name="title_activity_menu">MenuActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>

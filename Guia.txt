@@ -1,0 +1,5 @@
+De momento el programa necesita que hagas un nuevo usuario para poder acceder a él
+más que nada por que hasta tener el SQL no tiene mucho sentido almacenar datos
+
+Si, se que debo comentar más, pero en general creo que va bien, a ver si le puedo meter un apretón y seguir más
+que ahora me queda lo duro xD

@@ -7,12 +7,12 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 
-import com.example.rolife.fragments.callBackFragment;
-import com.example.rolife.fragments.forget_bar_fragment;
-import com.example.rolife.fragments.login_bar_fragment;
-import com.example.rolife.fragments.register_bar_fragment;
+import com.example.rolife.fragments.interfaceFragments;
+import com.example.rolife.fragments.loginACTForget_Fragment;
+import com.example.rolife.fragments.loginACTLogin_Fragment;
+import com.example.rolife.fragments.loginACTRegister_Fragment;
 
-public class loginActivity extends AppCompatActivity implements callBackFragment {
+public class LoginActivity extends AppCompatActivity implements interfaceFragments {
     //El que provoca el cambio
     FragmentTransaction fragmentTransaction;
     //El cambio en si
@@ -30,7 +30,7 @@ public class loginActivity extends AppCompatActivity implements callBackFragment
 
     //método por el cual aceptaremos nuevos fragmentos
     public void addFragment() {
-        login_bar_fragment fragment = new login_bar_fragment();
+        loginACTLogin_Fragment fragment = new loginACTLogin_Fragment();
         fragment.setCallBackFragment(this);
         fragmentManager = getSupportFragmentManager();//lo convertimos en un support de verdad
         fragmentTransaction = fragmentManager.beginTransaction();
@@ -39,15 +39,20 @@ public class loginActivity extends AppCompatActivity implements callBackFragment
     }
 
     public void replaceFragment(String procedencia) {
-switch(procedencia){
-    case"register":
-        fragment = new register_bar_fragment();
-        break;
-    case"forget":
-        fragment = new forget_bar_fragment();
-        break;
-}
-        //fragment = new register_bar_fragment();
+        //recibo la procedencia, un string para seleccionar con mayor seguridad a donde ir
+        //(más que nada por que el fragment.getId dice que puede dar fallos)
+        switch (procedencia) {
+            case "register":
+                fragment = new loginACTRegister_Fragment();
+                break;
+            case "forget":
+                fragment = new loginACTForget_Fragment();
+                break;
+            case "login":
+                fragment = new loginACTLogin_Fragment();
+                break;
+        }
+        //fragment = new loginACTRegister_Fragment();
         fragmentManager = getSupportFragmentManager();//lo convertimos en un support de verdad
         fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.addToBackStack(null);
@@ -59,5 +64,10 @@ switch(procedencia){
     public void changeFragment(String procedencia) {
 
         replaceFragment(procedencia);
+    }
+
+    @Override
+    public void removeFragment() {
+        //getActivity().getFragmentManager().beginTransaction().remove(this).commit();
     }
 }
