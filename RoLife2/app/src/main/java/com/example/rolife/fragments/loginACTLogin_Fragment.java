@@ -7,10 +7,7 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
-import android.text.Editable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,13 +16,15 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
+import com.example.rolife.MenuActivity;
 import com.example.rolife.R;
 
 
-public class login_bar_fragment extends Fragment {
+public class loginACTLogin_Fragment extends Fragment {
+
     Button btnLogin, btnRegister, btnForget;
     EditText etUserName, etPassword;
-    callBackFragment callBackFragment;
+    interfaceFragments interfaceFragments;
     String userName, userPass;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
@@ -53,9 +52,9 @@ public class login_bar_fragment extends Fragment {
         //BOTONES IDENTIFICADOS
         btnLogin = vroot.findViewById(R.id.loginfrag_BTNlogin);
         btnRegister = vroot.findViewById(R.id.loginfrag_BTNregister);
-        btnForget =vroot.findViewById(R.id.loginfrag_BTNforgetpass);
+        btnForget = vroot.findViewById(R.id.loginfrag_BTNforgetpass);
         //ACCIONES BOTONILES
-        btnLogin.setOnClickListener(new View.OnClickListener() {
+        btnLogin.setOnClickListener(new View.OnClickListener() { //Comprobación de acción logearse
             @Override
             public void onClick(View v) {
                 //Login
@@ -68,6 +67,9 @@ public class login_bar_fragment extends Fragment {
 
                 if (userName.equals(uName) && userPass.equals(uPass)) {
                     Toast.makeText(getContext(), "Login", Toast.LENGTH_SHORT).show();
+                    //llamar a una nueva actividad
+                    setCallActivity();
+
                 } else {
                     Toast.makeText(getContext(), "No Login", Toast.LENGTH_SHORT).show();
                 }
@@ -78,29 +80,34 @@ public class login_bar_fragment extends Fragment {
             @Override
             public void onClick(View v) {
                 //Registro
-                if (callBackFragment != null) {
-                    String procedencia= "register";
-                    callBackFragment.changeFragment(procedencia);
+                if (interfaceFragments != null) {
+                    String procedencia = "register";
+                    interfaceFragments.changeFragment(procedencia);
                 }
             }
-        });
+        });//Registro de nuevo usuario (almacenado)
 
         btnForget.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Registro
-                if (callBackFragment != null) {
-                    String procedencia= "forget";
-                    callBackFragment.changeFragment(procedencia);
+                //Olvidaste la constraseña?
+                if (interfaceFragments != null) {
+                    String procedencia = "forget";
+                    interfaceFragments.changeFragment(procedencia);
                 }
             }
-        });
+        }); // Olvidaste la constraseña
 
         return vroot;
 
     }
 
-    public void setCallBackFragment(callBackFragment callBackFragment) {
-        this.callBackFragment = callBackFragment;
+    public void setCallBackFragment(interfaceFragments interfaceFragments) {
+        this.interfaceFragments = interfaceFragments;
+    }
+
+    public void setCallActivity() {
+        Intent inicio = new Intent(getActivity(), MenuActivity.class);
+        startActivity(inicio);
     }
 }

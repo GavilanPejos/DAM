@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_night"
-    tools:context=".loginActivity">
+    tools:context=".LoginActivity">
     <!--Esto tengo que cambiarlo que el fondo queda como el culo -->
 
 

@@ -15,13 +15,14 @@ import androidx.fragment.app.Fragment;
 
 import com.example.rolife.R;
 
-public class forget_bar_fragment extends Fragment {
+public class loginACTForget_Fragment extends Fragment implements interfaceFragments {
     TextView tvTextExample;
     EditText etEmail;
     Button btnSend;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
     String userEmail;
+    interfaceFragments interfaceFragments;
 
     @Override
     public void onAttach(Context context) {
@@ -46,15 +47,33 @@ public class forget_bar_fragment extends Fragment {
             public void onClick(View v) {
                 //Login
                 userEmail = etEmail.getText().toString();
-
-                Toast.makeText(getContext(), "E-mail enviado", Toast.LENGTH_SHORT).show();
-
+                if (userEmail.contains("@")) {
+                    Toast.makeText(getContext(), "E-mail enviado", Toast.LENGTH_LONG).show();
+                } else {
+                    System.out.println("Por favor inserte un correo apropiado");
+                    removeFragment();
+                }
             }
         });
 
 
         return vroot;
 
+
+    }
+
+    public void setCallBackFragment(interfaceFragments interfaceFragments) {
+        this.interfaceFragments = interfaceFragments;
+    }
+
+    @Override
+    public void changeFragment(String procedencia) {
+
+    }
+
+    @Override
+    public void removeFragment() {
+        getActivity().getSupportFragmentManager().beginTransaction().remove(this).commit();
 
     }
 }

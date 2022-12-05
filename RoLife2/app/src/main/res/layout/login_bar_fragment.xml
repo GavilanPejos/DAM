@@ -106,7 +106,8 @@
         android:text="@string/loginfrag_didyouforget"
 
         android:textColor="#DD2C00"
-        android:textSize="18sp"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/loginfrag_ETuser"
 
